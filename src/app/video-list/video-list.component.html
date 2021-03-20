@@ -1,0 +1,31 @@
+<div class="container video-list">
+    <div class="row searchByCategory my-3">
+         <div class="col d-flex btn-container">
+            <button type="button" class="all btn btn-light" (click)="getAllData()">All</button>
+            <button type="button" class="bollywood btn btn-light" (click)="getBollywoodData()">Bollywood</button>
+            <button type="button" class="comedy btn btn-light" (click)="getComedyData()">Comedy</button>
+            <button type="button" class="angular btn btn-light" (click)="getAngularData()">Angular</button>
+            <button type="button" class="dance btn btn-light" (click)="getDanceData()">Dance</button>
+         </div>
+    </div>
+  <div class="row">
+
+    <div class="col-md-3 pr-0 mb-4" *ngFor="let data of videoList"  (click)="selectedVideo(data.vidName)">
+       <img src="{{data.imgUrl}}" class="img-thumnail">
+       <figcaption class="mt-3">
+           <div class="row small-mflex">
+               <div class="col-md-2">
+                    <img src="{{data.imgIcon}}" class="thumb_icon">
+               </div>
+               <div class="col-md-10">
+                   <h6>{{data.title}}</h6>
+                   <span class="text-muted video_title">{{data.vidTitle}}</span>
+                   <span class="text-muted video_view"> {{data.vidView}}</span>
+                   <span class="text-muted video_date"> {{data.vidDate}}</span>
+               </div>
+           </div>
+       </figcaption>
+    </div> 
+
+  </div>
+</div>
